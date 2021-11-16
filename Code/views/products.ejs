@@ -1,0 +1,52 @@
+<%- include('./header.ejs') %>
+
+<div class='mini-header'>
+    <p><%=currentCategory%></p>
+    <p><%=products.length%></p>
+</div>
+
+<div class='products-menu-container'>
+    <div class='menu-container'>
+        <p>Category</p>
+        <p>Men</p>
+        <p>Women</p>
+        <p>Product Type</p>
+        <%for(x of mainCategory.categories){%>
+            <% for( y of x.categories) {%>
+                <%=y.name%><br>
+            <%}%>
+        <%}%>
+        <p>Price</p>
+        <input type='range'>
+        <p>Color</p>
+        <p>Size</p>
+    </div>
+    <div class='products-container'>
+        <% for(product of products){ %>
+    
+            <div class = 'card'>
+    
+                <div class='image-container'>
+                        <img src="../../images/<%=product.image_groups[0].images[0].link%>">
+                </div>
+    
+                <div class='variants-image-holder'>
+                <% for(imageGroups of product.image_groups){ %>
+            
+                    <% if(imageGroups.view_type=="swatch") { %>
+            
+                            <% for(image of imageGroups.images){%>
+                                <img class='variants-image' src="../../images/<%=image.link%>">
+                            <%}%>
+                    <%}%>
+            
+                <%}%>
+                </div>
+    
+                <p class='name'><%=product.name%></p> 
+                <p class='price'><%=product.price%> <%=product.currency%></p>
+            </div>
+            
+        <%}%>
+    </div>
+</div>
