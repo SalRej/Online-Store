@@ -5241,7 +5241,7 @@ a.thumbnail {
       margin-top: 5em;
       margin-bottom: 15px; }
       .container .product .name a {
-        background-color: black;
+        background-color: #7a7878;
         color: white;
         font-size: 2em;
         padding: 5px;
@@ -5263,15 +5263,8 @@ a.thumbnail {
 .products-menu-container {
   width: 70vw;
   margin: auto;
-  display: flex; }
-
-.menu-container {
-  width: 20%;
-  background-color: #eaeaf0;
-  box-shadow: black 10px 15px 10px;
-  padding-left: 2%;
-  padding-top: 2%;
-  margin-top: 1em; }
+  display: flex;
+  align-items: flex-start; }
 
 .products-container {
   width: 80%;
@@ -5281,19 +5274,13 @@ a.thumbnail {
     border-color: black;
     border-width: 3px; }
   .products-container .card {
-    max-height: 100%;
     border-style: solid;
     border-color: #d1d1d1;
     margin: 1em; }
-    .products-container .card .image-container {
-      max-width: 100%;
-      max-height: 70%;
-      min-height: 60%; }
-      .products-container .card .image-container img {
-        max-height: 100%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto; }
+    .products-container .card .image-container img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
     .products-container .card .variants-image-holder {
       display: flex; }
       .products-container .card .variants-image-holder .variants-image {
@@ -5311,3 +5298,17 @@ a.thumbnail {
     .products-container .card .price {
       margin-left: 5%;
       font-size: 1vw; }
+
+.menu-container {
+  width: 20%;
+  background-color: #eaeaf0;
+  border-style: solid;
+  border-width: 2.5px;
+  padding-left: 2%;
+  padding-top: 2%;
+  margin-top: 1em; }
+  .menu-container a {
+    display: block; }
+  .menu-container .variants-image {
+    width: 30%;
+    height: 30%; }

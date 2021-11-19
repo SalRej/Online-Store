@@ -1,0 +1,56 @@
+<div class='menu-container'>
+    <script>
+        const mainCategory = <%- JSON.stringify(mainCategory) %>;
+        let products = <%- JSON.stringify(products) %>;
+    </script>
+        <div class='category'>
+            <p>Category</p>
+            <a href="/mens/Clothing/mens-clothing-suits">Men</a>
+            <a href="/womens/Clothing/womens-outfits">Women</a>    
+        </div>
+
+        <div class="product-type">
+            <p>Product Type</p>
+            <%for(category of mainCategory.categories){%>
+                <%for( subCategory of category.categories) {%>
+                   <a href="<%=subCategory.id%>"><%=subCategory.name%></a>
+                <%}%>
+            <%}%>
+        </div>
+
+
+        <div class='menu-price'>
+            <p>Price</p>
+            <p class='min-price'></p>
+            <input id='price-slider' type="range">
+            <p class='max-price'></p>  
+            <p id='value'>Value:0</p>
+        </div>
+
+
+        <div class='color-menu'>
+            <p>Color</p>
+            <% for(product of products){ %>
+                <%for(imageGroup of product.image_groups){%>
+                    <%if(imageGroup.view_type=="swatch"){%>
+                        <%for(image of imageGroup.images){%>
+                            <div class='chose-variant-holder'>
+                                <label for="<%=imageGroup.variation_value%>" >SSS</label>
+                                <input class='color-variant-checkbox' id = "<%=imageGroup.variation_value%>" type='checkbox'>
+                                <img class="variants-image" src="../../images/<%=image.link%>"
+                                alt="<%=image.alt%>"
+                                title="<%=image.title%>">
+                            </div>
+                           
+                        <%}%>
+                    <%}%>
+                <%}%>
+            <%}%>
+        </div>
+
+        <div class='size-variants-holder'>
+            <p>Size</p>
+        </div>
+
+        <button class='submit-filters' type="button">Submit</button>
+</div>

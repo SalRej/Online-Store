@@ -44,6 +44,14 @@ const productSchema = new mongoose.Schema({
     currency:{
         type:String,
         required:true
+    },
+    variation_attributes:{
+        type:Array,
+        required:true
+    },
+    long_description:{
+        type:String,
+        required:true
     }
 })
 

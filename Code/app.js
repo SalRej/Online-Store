@@ -16,9 +16,8 @@ app.set('view engine', 'ejs');
 //const mainPage = require('./routes/mainPage');
 //app.use('/',mainPage);
 
-const manRouter = require('./routes/category');
-app.use(['/mens','/womens'],manRouter);
-
-//const womanRouter = require('./routes/women/women');
-//app.use('/womens',womanRouter);
+const categoryRouter = require('./routes/category');
+app.use(['/mens','/womens'],categoryRouter);
+const test = require('./routes/test');
+app.use('/test',test);
 app.listen(3000);
