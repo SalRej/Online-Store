@@ -9,8 +9,7 @@ router.get('/:categoryName/:productId',(req,res)=>{
 
     //look in the db for the product with current id
     Product.find({primary_category_id:req.params.productId}).then((result)=>{
-      
-      
+
       //slices the main cateogry(men or women)form the url
       const mainCategory=req.baseUrl.slice(1,req.baseUrl.length);
 
@@ -32,5 +31,6 @@ router.get('/:categoryName/:productId',(req,res)=>{
       });
     })
   })
-
+const productRouter = require('./product-description');
+router.use('/:categoryName/:productId',productRouter);
 module.exports = router;

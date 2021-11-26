@@ -1,56 +1,94 @@
-.container{
-    width:70vw;
-    margin:auto;
-    background-color: rgb(240, 247, 255);
-    margin-top:1em;
-    margin-bottom:1em;
-    padding:1em 1em 5em 1em;
-    box-shadow: 15px 15px 20px black;
+@media all and (min-width:1000px){
+
+    .container{
+        width:70vw;
+        margin:auto;
+        background-color: rgb(240, 247, 255);
+        margin-top:1em;
+        margin-bottom:1em;
+        padding:1em 1em 5em 1em;
+        box-shadow: 5px 5px 20px black;
+        .main-title{
+            margin-top:15px;
+            border-width: 3px;
+            border-style: solid;
+            border-radius: 10px;
+            .page-title{
+                text-align: center;
+                font-size: 25px;
+            }
+            .page-description{
+                text-align: center;
+            }
+        }
+        .product{
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+           
+            .name{
+                margin-top:5em;
+        
+                a{
+                    background-color: rgb(225, 235, 247);
+                    color:rgb(32, 26, 26);
+                    font-size: 2em;
+                    padding:5px;
+                    border-radius: 10px;
+                    border-width: 3px;
+                    border-style:solid;
+                }
+                a:hover{
+                    background-color: rgb(172, 199, 201);
+                    color:rgb(247, 243, 243);
+                    border-width: 3px;
+                    border-style:solid;
+                }
+                margin-bottom:15px;
+            }
+        
+            .title{
+                font-size: 1.3em;
+            }
+            .description{
+        
+            }
+            img{
+                width: 100%;
+            }
+        }
+        
+    }
+}
+
+@media all and (max-width:1000px){
     .main-title{
-        margin-top:15px;
-        border-width: 3px;
+        text-align:center;
         border-style: solid;
         border-radius: 10px;
+        margin:5%;
         .page-title{
-            text-align: center;
-            font-size: 25px;
-        }
-        .page-description{
-            text-align: center;
+            font-weight: bold;
         }
     }
     .product{
-        border-bottom-width: 3px;
+        margin-left:2%;
+        margin-right:2%;
         border-bottom-style: solid;
-       
         .name{
-            margin-top:5em;
-    
+            font-size: 2em;
             a{
-                background-color: rgb(122, 120, 120);
+                display: block;
+                margin:5% 0 2% 0;
                 color:white;
-                font-size: 2em;
-                padding:5px;
+                background-color: rgb(86, 181, 219);
                 border-radius: 10px;
+                text-align: center;
             }
-            a:hover{
-                background-color: white;
-                color:black;
-                border-width: 3px;
-                border-style:solid;
-            }
-            margin-bottom:15px;
         }
-    
         .title{
-            font-size: 1.3em;
+            font-weight: bold;
+            text-align: center;
         }
-        .description{
-    
-        }
-        img{
-            width: 100%;
-        }
+
     }
-    
 }

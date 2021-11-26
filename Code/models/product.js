@@ -52,6 +52,10 @@ const productSchema = new mongoose.Schema({
     long_description:{
         type:String,
         required:true
+    },
+    id:{
+        type:String,
+        required:true
     }
 })
 

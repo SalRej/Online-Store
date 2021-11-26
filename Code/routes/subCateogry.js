@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const Categories = require('../models/categories');
 const Product = require('../models/product');
 
-const test = require('./products');
 
 router.get('/:categoryName',(req,res)=>{
 
@@ -24,6 +23,8 @@ router.get('/:categoryName',(req,res)=>{
     })
 
   })
-router.use('/',test);
+  
+const products  = require('./products');
+router.use('/',products);
 
 module.exports = router;

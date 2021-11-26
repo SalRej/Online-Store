@@ -24,6 +24,7 @@
     "method-override": "^3.0.0",
     "mongodb": "^3.7.3",
     "mongoose": "^6.0.12",
+    "soap": "^0.43.0",
     "underscore": "^1.13.1"
   },
   "devDependencies": {
