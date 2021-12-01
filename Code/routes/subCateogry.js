@@ -8,7 +8,6 @@ const Product = require('../models/product');
 router.get('/:categoryName',(req,res)=>{
 
     const mainCategory=req.baseUrl.slice(1,req.baseUrl.length);
-    console.log(mainCategory);
     Categories.find({id:mainCategory}).then((result)=>{
       
       let subCategories;
@@ -18,7 +17,8 @@ router.get('/:categoryName',(req,res)=>{
         }
       }
   
-      res.render('sub_category',{subCategories:subCategories.categories,
+      res.render('sub_category',{
+        subCategories:subCategories.categories,
       categoryName:req.params.categoryName});
     })
 

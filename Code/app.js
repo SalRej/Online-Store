@@ -13,9 +13,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
-//const mainPage = require('./routes/mainPage');
-//app.use('/',mainPage);
-
 const categoryRouter = require('./routes/category');
 app.use(['/mens','/womens'],categoryRouter);
 app.listen(3000);

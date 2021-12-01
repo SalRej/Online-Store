@@ -1,0 +1,106 @@
+<%- include('./header.ejs') %>
+
+<script>
+    let product = <%- JSON.stringify(product) %>;
+    let currencyValue = <%- JSON.stringify(currencyValue) %>;
+    let currencyName = <%- JSON.stringify(currencyName) %>;
+</script>
+
+<div class='product-container'>
+
+    <div class="image-wraper">
+        <div class='image-slider-descktop'>
+
+            <img class='arrow-up' src="../../../images/arrow-down-icon-png-6685.png">
+            <img class='arrow-down' src="../../../images/arrow-down-icon-png-6685.png">
+    
+        </div>
+    
+        <div class='main-image'>
+    
+        </div>    
+
+            <img class='left-arrow' src="../../../images/left-arrow-2563.png">
+            <img class='right-arrow' src="../../../images/left-arrow-2563.png">
+            
+            <div class='small-circles'>
+
+            </div>
+        <div class='filters-wraper'>
+            <p class='item-number'>Item No. <%=product.id%></p>
+            <p class='item-name'><%=product.name%></p>
+
+            <div class='price-holder'>
+                <p class='item-price'><%=currencyValue%></p>
+                <form id='currencyForm'>
+                    <select id="currency" name='currency'>
+                        <option value="USD">USD</option>
+                        <option value="BGN">BGN</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </form>
+            </div>
+        
+            <div class='color-filters'>
+                <p>Color</p>
+                <%for(let imageGroup of product.image_groups){%>
+                    <% if (imageGroup.view_type == "swatch" && typeof(imageGroup.variation_value)!='undefined'){%>
+                        <%for(let image of imageGroup.images){%>
+                            <img id = "<%=imageGroup.variation_value%>" class='color-variation' src='../../../images/<%=image.link%>'>
+                        <%}%>
+                    <%}%>
+                <%}%>
+            </div>
+
+            <div class='size-filters'>
+                <p>Size</p>
+                <div>
+                    <%if(typeof(product.variation_attributes[1])!='undefined'){%>
+                        <%for(let value of product.variation_attributes[1].values){%>
+                            <p class='size-variant'><%=value.name%></p>
+                        <%}%>
+                    <%}%>
+                </div>
+            </div>
+
+            <div class='quantity'>
+                <p>Quantity</p>
+                <div class='wraper'>
+                    <div>-</div>
+                    <div>1</div>
+                    <div>+</div>
+                    <button class='add-chart'>Add To Chart</button>
+                </div>
+
+            </div>
+
+            <div class='wish-list'>
+                <img src="../../../images/pngfind.com-heart-png-84923.png">
+                <p>Add to wish list</p>
+            </div>
+        </div>
+    </div>
+
+    <div class='description'>
+        <div class='heading'>
+            <p>Description</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+                ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+        <div class='drop-down'>
+            <img class='icon' src = "../../../images/arrow-down-icon-png-6685.png">
+            <div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <button class='add-chart'>Add To Chart</button>
+</div>
+
+<%-include('./footer.ejs')%>

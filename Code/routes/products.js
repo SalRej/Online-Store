@@ -17,13 +17,10 @@ router.get('/:categoryName/:productId',(req,res)=>{
       Categories.find({id:mainCategory}).then((resultFromCategory)=>{
             
       //products to send to the frontend
-      let products=result;
+      //let products=result;
 
-
-        //send all products,whole main category from db,id of the current products
-        //the sub category name ,and min,max and chosen values for the slider
         res.render("products",
-            {products:products
+            {products:result
             ,mainCategory:resultFromCategory[0]
             ,productId:req.params.productId
             ,currentSubCategory:req.params.categoryName         
