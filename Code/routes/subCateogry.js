@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Categories = require('../models/categories');
-const Product = require('../models/product');
 
+router.get('/:category/:categoryName',(req,res)=>{
 
-router.get('/:categoryName',(req,res)=>{
-
-    const mainCategory=req.baseUrl.slice(1,req.baseUrl.length);
+    console.log("l");
+    //const mainCategory=req.baseUrl.slice(1,req.baseUrl.length);
+    const mainCategory = req.params.category;
     Categories.find({id:mainCategory}).then((result)=>{
       
       let subCategories;
@@ -18,13 +18,10 @@ router.get('/:categoryName',(req,res)=>{
       }
   
       res.render('sub_category',{
-        subCategories:subCategories.categories,
+      subCategories:subCategories.categories,
       categoryName:req.params.categoryName});
     })
 
   })
-  
-const products  = require('./products');
-router.use('/',products);
 
 module.exports = router;

@@ -14,5 +14,14 @@ app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
 const categoryRouter = require('./routes/category');
-app.use(['/mens','/womens'],categoryRouter);
+const subCategory = require('./routes/subCateogry');
+const products = require('./routes/products');
+const productDescription = require('./routes/product-description');
+
+app.get("/:category",categoryRouter);
+app.get("/:category/:subCategory",subCategory);
+app.get("/:category/:subCategory/:products",products);
+app.get("/:category/:subCategory/:products/:productID",productDescription);
+
+
 app.listen(3000);

@@ -3,10 +3,9 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const Categories = require('../models/categories');
 
+router.get('/:category',(req, res)=>{
 
-router.get('/',(req, res)=>{
-
-  const mainCategory=req.baseUrl.slice(1,req.baseUrl.length);
+  const mainCategory=req.params.category;
 
   Categories.find({id:mainCategory}).then((result)=>{
     
@@ -25,6 +24,4 @@ router.get('/',(req, res)=>{
   });
 });
 
-const subCategory = require('./subCateogry');
-router.use(`/`,subCategory);
 module.exports = router;

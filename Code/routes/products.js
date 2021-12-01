@@ -5,29 +5,25 @@ const Categories = require('../models/categories');
 const Product = require("../models/product");
 
 //this route shows the products page
-router.get('/:categoryName/:productId',(req,res)=>{
+router.get('/:category/:subCategory/:products',(req,res)=>{
 
     //look in the db for the product with current id
-    Product.find({primary_category_id:req.params.productId}).then((result)=>{
+    Product.find({primary_category_id:req.params.products}).then((result)=>{
 
       //slices the main cateogry(men or women)form the url
-      const mainCategory=req.baseUrl.slice(1,req.baseUrl.length);
+      const mainCategory=req.params.category;
 
       //find the main category(men or women) for the db
       Categories.find({id:mainCategory}).then((resultFromCategory)=>{
-            
-      //products to send to the frontend
-      //let products=result;
 
         res.render("products",
             {products:result
             ,mainCategory:resultFromCategory[0]
-            ,productId:req.params.productId
-            ,currentSubCategory:req.params.categoryName         
+            ,productId:req.params.products
+            ,currentSubCategory:req.params.subCategory         
             });
       });
     })
   })
-const productRouter = require('./product-description');
-router.use('/:categoryName/:productId',productRouter);
+
 module.exports = router;
