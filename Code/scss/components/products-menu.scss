@@ -5,35 +5,43 @@
     .menu-container{
         width:20%;
     
-        border-style:solid;
-        border-width: 2.5px;
         padding: 0;
         margin-top:1em;
+        a{
+            display: block;
+            color:grey;
+            margin-left:5%;
+        }
+        .checked{
+            
+            &::first-letter{
+                color:red;
+                margin-left:-7%;
+            }
+            color:black;
+            font-weight: bold;
+        }
+
         .show-filters{
             display: none;
         }
-        a{
-            display:block;
-            color:black;
-            transition: background-color 1s;
-        }
+
         p:first-child{
             font-weight: bold;
             margin-top:7%;
             margin-bottom: 2%;
             font-size: 1.2vw;
         }
-        a:hover{
-            background-color: black;
-            color:white;
-        }
         .category{
             margin-top:7%;
             margin-left:7%;
             margin-right: 7%;
+
             padding-bottom: 5%;
             font-size: 1.2vw;
             border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-bottom-color:grey;
         }
         .product-type{
             margin-left:7%;
@@ -41,6 +49,8 @@
             font-size: 1.2vw;
             padding-bottom: 5%;
             border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-bottom-color:grey;
         }
         .menu-price{
             margin-left:7%;
@@ -48,6 +58,8 @@
             max-width: 100%;
             padding-bottom: 5%;
             border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-bottom-color:grey;
             .slider-holder{
                 width: 100%;
                 p{
@@ -55,10 +67,11 @@
                     font-size: 1vw;
                 }
                 input{
-                    width: 100%;
+                    width: 80%;
                     display: block;
                     margin:auto;
                     margin-bottom:5%;
+                    background: red;
                 }
                 .max-price{
                     float:right;
@@ -71,6 +84,8 @@
             margin-right: 7%;
             padding-bottom: 5%;
             border-bottom-style:solid;
+            border-bottom-width: 2px;
+            border-bottom-color:grey;
             .color-holder{
                 
                 display: flex;
@@ -114,6 +129,9 @@
     
         }
         .size-variants-holder{
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            border-bottom-color:grey;
             margin-left:7%;
             margin-right:7%;
             margin-top: 5%;
@@ -122,31 +140,40 @@
                 // flex-wrap: wrap;
                 // justify-content:center;
                 display: grid;
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(3,1fr);
                 label{
-                    min-width: 2.5vw;
-                    max-width: 5vw;
+                    width:1.7em;
                     height: 1.7vw;
                     margin-bottom:2%;
                     text-align: center;
-                    border-style: solid;
-                    transition: color 1s;
-                    transition: background-color 1s;
-                    
-                }
-                label:hover{
-                    background-color: black;
-                    color:white;
                 }
                 input{
                     display: none;
                 }
                 :checked +label{
-                    background-color: black;
-                    color:white;;
+                    border-style: solid;
+                    border-color: red;
                 }
             }
         
+        }
+        .reset-filters{
+            margin:3% 5% 5% 5%;
+            border-bottom-style: solid;
+            border-bottom-color: grey;
+            border-bottom-width: 2px;
+            padding-bottom: 5%;
+            button{
+                margin-top:5%;
+                font-weight: bold;
+                background-color: lightgray;
+                color:rgb(87, 87, 87);
+                display: block;
+                margin:auto;
+                border-radius: 5px;
+                padding:2% 5% 2% 5%;
+            }
+            
         }
         .submit-filters{
             width: 90%;

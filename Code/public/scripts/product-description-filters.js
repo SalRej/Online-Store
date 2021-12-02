@@ -72,6 +72,7 @@ const updateColor = (chosenColor) =>{
     $('.slide-image-descktop').each(function(index){
         if(index == 0){
             $(this).css("opacity","1");
+            $(this).css({"border-style":"solid","border-color":"red"})
             $('.slide-image').eq(0).css("display","inline-block");
         }else{
             $(this).css("opacity","0.5");
@@ -170,9 +171,11 @@ const moveImagesDescktop =()=>{
         $('.slide-image-descktop').each(function(index){
             if(index == currentImageIndex){
                 $(this).css("opacity","1");
+                $(this).css({"border-style":"solid","border-color":"red"})
                 $('.slide-image').eq(index).css("display","inline");
             }else{
                 $(this).css("opacity","0.5");
+                $(this).css({"border-style":"none"});
                 $('.slide-image').eq(index).css("display","none");
             }
         })
@@ -190,9 +193,11 @@ const moveImagesDescktop =()=>{
             console.log("index " + index);
             if(index == currentImageIndex){
                 $(this).css("opacity","1");
+                $(this).css({"border-style":"solid","border-color":"red"})
                 $('.slide-image').eq(index).css("display","inline-block");
             }else{
                 $(this).css("opacity","0.5");
+                $(this).css({"border-style":"none"});
                 $('.slide-image').eq(index).css("display","none");
             }
         })
@@ -251,11 +256,14 @@ if(typeof(product)!='undefined'){
 
             $('.size-variant').each(function(){
                 if(currentSize!=$(this).text()){
-                    $(this).css({"background-color":"white"
-                    ,"color":"black"});
+                    $(this).css({"border-color":"grey"
+                    ,"border-width":"1px"});
                 }else{
-                    $(this).css({"background-color":"black",
-                    "color":"white"});
+                    $(this).css({
+                                "border-color":"red",
+                                "border-width":"2px",
+                                "border-bottom-width":"4px"
+                                });
                 }
             })
         })

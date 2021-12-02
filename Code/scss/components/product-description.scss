@@ -1,3 +1,191 @@
+
+@media all and(min-width:1000px){
+    .product-container{
+        width:70vw;
+        margin:auto;
+        
+        .image-wraper{
+            display: flex;
+            .image-slider-descktop{
+               // border-style: solid;
+                width:5vw;
+                margin-right:5%;
+                .arrow-up,.arrow-down{
+                    display: block;
+                    margin:auto;
+                }
+            }
+            .main-image{
+                //border-style:solid;
+
+                img{
+                    width:30vw;
+                    height: 30vw;
+                   object-fit: contain;
+                    margin:auto;
+                }
+            }
+        }
+        .filters-wraper{
+            margin-left:5%;
+            width: 20vw;
+            .item-number{
+                color:grey;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+            }
+            .item-name{
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            .price-holder{
+                color:grey;
+                font-weight: bold;
+                display: flex;
+                justify-content: start;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                margin-top:5%;
+                .item-price{                
+                    font-size: 1.5em;
+                }
+                #currencyForm{
+                    width:30%;
+                    select{
+                        margin-left:5%;
+                        margin-top:2%;
+                        width: 100%;
+                        height: 70%;
+                    }
+                }
+                
+            }
+            .color-filters{
+                p{
+                    font-size: 1em;
+                }
+                .color-variation{
+                    width: 1.5em;
+                    height: 1.5em;
+                    margin-bottom: 3%;
+                }
+                :hover{
+                    cursor: pointer;
+                }
+            }
+            .size-filters{
+                div{
+                    display: flex;
+                    flex-wrap: wrap;
+                    p{
+                        margin-right:3%;
+                        border-style: solid;
+                        border-color:grey;
+                        border-width: 1px;
+                        padding-right:3%;
+                        padding-left:3%;
+                        text-align: center;
+                    }
+                    :hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .quantity{
+                border-bottom-style:solid;
+                border-bottom-color:grey;
+                border-bottom-width: 1px;
+                padding-bottom: 5%;
+                p{
+                    font-size: 1em;
+                }
+                .wraper{
+                    display: flex;
+                    justify-content: start;
+                    div{
+                        width: 15%;
+                        font-size:1.5em;
+                        text-align: center;
+                        border-style:solid;
+                        border-width: 1px;
+                        padding-left:5%;
+                        padding-right: 5%;
+                    }
+                    :hover{
+                        cursor: pointer;
+                    }
+                    .add-chart{
+                        display: block;
+                        white-space: nowrap;
+                        padding:5% 8% 5% 8%;
+                        color:white;
+                        margin-left:10%;
+                        background-color: rgb(219, 34, 34);
+                    }
+                }
+                
+            }
+            .share-wish{
+                display:flex;
+                justify-content: space-between;
+                .share{
+                    img{
+                        margin-top:-50%;
+                    }
+                }
+                .wish-list{
+                    display: flex;
+                    justify-content: center;
+                    font-size: 1em;
+                    margin-top:5%;
+                    white-space: nowrap;
+                    padding-top:3%;
+                    img{
+                        width: 1em;
+                        height: 0.9em;
+                        margin-top:3%;
+                        margin-right:2%;
+                    }
+                }
+            }
+            
+        }
+        .left-arrow{
+            display: none;
+        }
+        .right-arrow{
+            display: none;
+        }
+        .description{
+            display: flex;
+            justify-content: space-between;
+            .heading{
+                p:first-child{
+                    font-size: 1.5em;
+                }
+               
+                margin-top:5%;       
+                width: 65%;
+            }
+            img{
+                margin-left:100%;
+                width: 2em;
+                height: 2em;
+            }
+            .drop-down{
+                width: 25%;
+                margin:auto;
+                div{
+                    height: 7vw;
+
+                }
+            }
+        }
+        .add-chart{
+            display: none;
+        }
+    }
+}
 @media all and(max-width:1000px){
     .product-container{
         width: 100vw;
@@ -174,177 +362,5 @@
             background-color: rgb(233, 105, 105);
         }
 
-    }
-}
-
-@media all and(min-width:1000px){
-    .product-container{
-        width:70vw;
-        margin:auto;
-        
-        .image-wraper{
-            display: flex;
-            margin-top:7%;
-            .image-slider-descktop{
-               // border-style: solid;
-                width:5vw;
-                margin-right:5%;
-                .arrow-up,.arrow-down{
-                    display: block;
-                    margin:auto;
-                }
-            }
-            .main-image{
-                //border-style:solid;
-
-                img{
-                    width:30vw;
-                    height: 30vw;
-                   object-fit: contain;
-                    margin:auto;
-                }
-            }
-        }
-        .filters-wraper{
-            margin-left:5%;
-            width: 20vw;
-            .item-number{
-                color:grey;
-                border-bottom-style: solid;
-                border-width: 2px;
-            }
-            .item-name{
-                font-size: 1.5em;
-                font-weight: bold;
-            }
-            .price-holder{
-                color:grey;
-                font-weight: bold;
-                display: flex;
-                justify-content: start;
-                border-bottom-style: solid;
-                margin-top:5%;
-                .item-price{                
-                    font-size: 1.5em;
-                }
-                #currencyForm{
-                    width:30%;
-                    select{
-                        margin-left:5%;
-                        margin-top:2%;
-                        width: 100%;
-                        height: 70%;
-                    }
-                }
-                
-            }
-            .color-filters{
-                p{
-                    font-size: 1.5em;
-                }
-                .color-variation{
-                    width: 1.5em;
-                    height: 1.5em;
-                    margin-bottom: 3%;
-                }
-                :hover{
-                    cursor: pointer;
-                }
-            }
-            .size-filters{
-                div{
-                    display: flex;
-                    flex-wrap: wrap;
-                    p{
-                        margin-right:3%;
-                        border-style: solid;
-                        padding-right:3%;
-                        padding-left:3%;
-                        text-align: center;
-                    }
-                    :hover{
-                        cursor: pointer;
-                    }
-                }
-            }
-            .quantity{
-                p{
-                    font-size: 1.5em;
-                }
-                .wraper{
-                    display: flex;
-                    justify-content: start;
-                    div{
-                        width: 15%;
-                        font-size:1.5em;
-                        text-align: center;
-                        border-style:solid;
-                        border-width: 1px;
-                        padding-left:5%;
-                        padding-right: 5%;
-                    }
-                    :hover{
-                        cursor: pointer;
-                    }
-                    .add-chart{
-                        white-space: nowrap;
-                        padding:5% 8% 5% 8%;
-                        color:white;
-                        margin-left:10%;
-                        background-color: rgb(233, 105, 105);
-                    }
-                }
-                
-            }
-            .wish-list{
-                display: flex;
-                justify-content: center;
-                font-size: 1em;
-                margin-top:5%;
-            
-                padding-top:3%;
-                border-style:solid;
-                img{
-                    width: 1em;
-                    height: 0.9em;
-                    margin-top:3%;
-                    margin-right:2%;
-                }
-            }
-        }
-        .left-arrow{
-            display: none;
-        }
-        .right-arrow{
-            display: none;
-        }
-        .description{
-            display: flex;
-            justify-content: space-between;
-            .heading{
-                p:first-child{
-                    font-size: 1.5em;
-                }
-               
-                margin-top:5%;       
-                width: 65%;
-            }
-            img{
-                margin-left:100%;
-                width: 2em;
-                height: 2em;
-            }
-            .drop-down{
-                width: 25%;
-                margin:auto;
-                div{
-                    height: 7vw;
-
-                }
-            }
-        }
-        .add-chart{
-            display: none;
-        }
     }
 }

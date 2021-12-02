@@ -135,8 +135,35 @@ const applyFilters = ()=>{
         dropDownBar.each(function(){
             $(this).click(function(){
                 let parrent = $(this).parent().parent();
-                console.log(parrent.children().eq(1).toggle("1000"))
+                parrent.children().eq(1).toggle("1000");
             })
         })
+        
+        //every link in class(category) if his id = curren main category then add a chek mark infront of it 
+        $(".category a").each(function(){
+            if($(this).attr("id")==mainCategory.id){
+                const text = $(this).text();
+                $(this).text("✓" + text);
+                $(this).addClass("checked");
+            }
+        })
+        //every link in class(product type) if his id = curren subCategory then add a chek mark infront of it 
+        $(".product-type a").each(function(){
+            if($(this).attr("id")==products[0].primary_category_id){
+                const text = $(this).text();
+                $(this).text("✓" + text);
+                $(this).addClass("checked");
+            }
+        })
+
+        $(".reset-filters button").click(function(){
+            $('.size-checkbox').each(function(){
+                $(this).prop('checked', false);
+            })
+            $('.color-variant-checkbox').each(function(){
+                $(this).prop('checked', false);
+            })
+        })
+
     }
 }

@@ -4,15 +4,15 @@
         let products = <%- JSON.stringify(products) %>;
     </script>
 
-
+        <p>Refine by:</p>
         <div class='category'>
             <div class="heading">
                 <p>Category</p>
-                <img class="drop-down" src="../../images/arrow-down-icon-png-6685.png">
+                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
             </div>
             <div>
-                <a href="/mens/Clothing/mens-clothing-suits">Men</a>
-                <a href="/womens/Clothing/womens-outfits">Women</a>
+                <a href="/mens/Clothing/mens-clothing-suits" id='mens'>Men</a>
+                <a href="/womens/Clothing/womens-outfits" id='womens'>Women</a> 
             </div>
                 
         </div>
@@ -20,14 +20,16 @@
         <div class="product-type">
             <div class="heading">
                 <p>Product Type</p>
-                <img class="drop-down" src="../../images/arrow-down-icon-png-6685.png">
+                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
             </div>
             <div>
-                <%for(category of mainCategory.categories){%>
-                    <%for( subCategory of category.categories) {%> 
-                       <a href="/<%=mainCategory.id%>/<%=category.name%>/<%=subCategory.id%>"><%=subCategory.name%></a>
+                <form id="subCategoryForm">
+                    <%for(category of mainCategory.categories){%>
+                        <%for( subCategory of category.categories) {%> 
+                            <a href="<%=subCategory.id%>" id='<%=subCategory.id%>'><%=subCategory.name%></a>
+                        <%}%>
                     <%}%>
-                <%}%>
+                </form>
             </div>
         </div>
 
@@ -36,7 +38,7 @@
 
             <div class="heading">
                 <p>Price</p>
-                <img class="drop-down" src="../../images/arrow-down-icon-png-6685.png">
+                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
             </div>
             <div>
                 <div class='slider-holder'>
@@ -54,7 +56,7 @@
         <div class='color-menu'>
             <div class="heading">
                 <p>Color</p>
-                <img class="drop-down" src="../../images/arrow-down-icon-png-6685.png">
+                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
             </div>
             <div class='color-holder'>
                 <% for(product of products){ %>
@@ -68,8 +70,7 @@
                                         alt="<%=image.alt%>"
                                         title="<%=image.title%>">
                                     </label>
-                                </div>
-                            
+                                </div> 
                             <%}%>
                         <%}%>
                     <%}%>
@@ -80,13 +81,19 @@
         <div class='size-variants-holder'>
             <div class="heading">
                 <p>Size</p>
-                <img class="drop-down"src="../../images/arrow-down-icon-png-6685.png">
+                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
             </div>
             <div class='size-variants'>
 
             </div>
         </div>
-
+        <div class='reset-filters'>
+            <div class="heading">
+                <p></p>
+                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
+            </div>
+            <button type='submit'>Reset Filters</button>
+        </div>
         <button class='submit-filters' type="button">Submit</button>
 
 </div>

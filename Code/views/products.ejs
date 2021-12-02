@@ -1,7 +1,12 @@
 <%- include('./header.ejs') %>
 
 <div class='mini-header'>
-    <img src ="../../images/fp-logo.png">
+    <img src ="/images/fp-logo.png">
+    <span class='navigation'>
+        <a href="/<%=mainCategory.id%>"><%=mainCategory.id%> /</a>
+        <a href="/<%=mainCategory.id%>/<%=currentSubCategory%>"><%=currentSubCategory%></a>
+    </span>
+    <img class='search' src='/images/search.png'>
     <div>
         <p class='category'><%=currentSubCategory%></p>
         <p class='num-products'><%=products.length%> ITEMS</p>

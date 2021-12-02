@@ -8,21 +8,18 @@ const Product = require("../models/product");
 router.get('/:category/:subCategory/:products',(req,res)=>{
 
     //look in the db for the product with current id
-    Product.find({primary_category_id:req.params.products}).then((result)=>{
+    Categories.find({id:req.params.category}).then((resultFromCategory)=>{
 
-      //slices the main cateogry(men or women)form the url
-      const mainCategory=req.params.category;
+      Product.find({primary_category_id:req.params.products}).then((result)=>{
 
-      //find the main category(men or women) for the db
-      Categories.find({id:mainCategory}).then((resultFromCategory)=>{
-
-        res.render("products",
-            {products:result
-            ,mainCategory:resultFromCategory[0]
-            ,productId:req.params.products
-            ,currentSubCategory:req.params.subCategory         
-            });
-      });
+        //find the main category(men or women) for the db
+          res.render("products",
+              {products:result
+              ,mainCategory:resultFromCategory[0]
+              ,productId:req.params.products
+              ,currentSubCategory:req.params.subCategory
+              });
+        });
     })
   })
 
