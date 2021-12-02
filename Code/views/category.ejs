@@ -1,0 +1,23 @@
+<%- include ('./header.ejs') %>
+<div class="container">
+
+    <div class="main-title">
+        <p class="page-title"><%=pageTitle%></p>
+        <p class="page-description"><%=pageDescription%></p>
+    </div>
+
+
+    <% for(x of category){%>
+        <div class='product'>
+            <div class='name'>
+                <a href="<%=mainCategory%>/<%=x.name%>"><%=x.name%></a>
+            </div>
+            <a href="/<%=mainCategory%>/<%=x.name%>"><img src ="images/<%=x.image%>"></a>
+            <p class='title'><%=x.page_title %></p> 
+            <p class='description'><%=x.page_description %></p>
+        </div>
+      
+    <% } %>
+</div>
+<%- include("./footer.ejs")%>
+

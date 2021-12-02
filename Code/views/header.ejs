@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><%= title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/stylesheets/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
   	
     <body>
         <div class="header-wrapper">
-            <span class="headerNotification">Hi! I'm header.ejs</span>
+            <div class="free-shipping">
+                FREE SHIPPIN OF ALL ORDERS ABOVE 99
+            </div>
+
+            <div class="menu">
+                <div class='options-holder'>
+                    <div class='option-1'>
+                        <a href="/mens">Online Store</a>
+                        <a href="/mens">Men</a>
+                        <a href="/womens">Women</a>
+                    </div>
+                    <div class=option-2>
+                        <a href="#"><img src="/images/header/images-removebg-preview.png">Store Locator</a>
+                        <a href="#"><img src="/images/header/login.png">Login</a>
+                        <a href="#"><img src="/images/header/order-status.png">Order Status</a>
+                        <a href="#"><img src="/images/header/flag.png">EN</a>
+                        <a href="#"><img src="/images/header/cart.png">Cart</a>
+                    </div>
+                </div>
+            </div>
         </div>

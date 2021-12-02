@@ -1,0 +1,54 @@
+<%- include('./header.ejs') %>
+
+<div class='mini-header'>
+    <img src ="/images/fp-logo.png">
+    <span class='navigation'>
+        <a href="/<%=mainCategory.id%>"><%=mainCategory.id%> /</a>
+        <a href="/<%=mainCategory.id%>/<%=currentSubCategory%>"><%=currentSubCategory%></a>
+    </span>
+    <img class='search' src='/images/search.png'>
+    <div>
+        <p class='category'><%=currentSubCategory%></p>
+        <p class='num-products'><%=products.length%> ITEMS</p>
+    </div> 
+</div>
+
+<div class='products-menu-container'>
+    <div class='mobile-menu'>
+        <img class='menu-icon' src="/images/menu-icon-19350.png">
+        <p><%=currentSubCategory%></p>
+        <img class='cart' src="/images/cart-mobile.png">
+    </div>
+    <%- include('./products-menu.ejs')%>
+
+    <div class='products-container'>
+        <%for(product of products){ %>
+            <div class = 'card'>
+                <a href="<%=product.primary_category_id%>/<%=product.id%>">
+
+                <div class='image-container'>
+                        <img src="../../images/<%=product.image_groups[0].images[0].link%>">
+                </div>
+    
+                <div class='variants-image-holder'>
+                    <%for(imageGroup of product.image_groups){%>
+                        <%if(imageGroup.view_type=="swatch"){%>
+                            <%for(image of imageGroup.images){%>
+                                <img class="variants-image" src="../../images/<%=image.link%>"
+                                alt="<%=image.alt%>"
+                                title="<%=image.title%>">
+                            <%}%>
+                        <%}%>
+                    <%}%>
+                </div>
+    
+                <p class='name'><%=product.name%></p> 
+                <p class='price'><%=product.price%> <%=product.currency%></p>
+                </a>
+
+            </div>
+        <%}%>
+    </div>
+</div>
+<%- include("./footer.ejs")%>
+

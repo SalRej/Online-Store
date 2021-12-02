@@ -1,0 +1,138 @@
+
+<div class="show-filters">
+    <div class='wraper'>
+        <img class='show-filters-button'src="/images/back-icon.png">   
+        <p>Filters</p>
+    </div>
+    <div class='wraper'>
+        <p>Search</p>
+        <img src="/images/search.png">
+    </div>
+</div>
+<div class='menu-container'>
+    <script>
+        const mainCategory = <%- JSON.stringify(mainCategory) %>;
+        let products = <%- JSON.stringify(products) %>;
+    </script>
+
+        <p class='refine'>Refine by:</p>
+        <div class='category'>
+            <div class="heading">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Category</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
+            </div>
+            <div>
+                <a href="/mens/Clothing/mens-clothing-suits" id='mens'>Men</a>
+                <a href="/womens/Clothing/womens-outfits" id='womens'>Women</a> 
+            </div>
+                
+        </div>
+
+        <div class="product-type">
+            <div class="heading">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Product Type</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
+            </div>
+            <div>
+                <form id="subCategoryForm">
+                    <%for(category of mainCategory.categories){%>
+                        <%for( subCategory of category.categories) {%> 
+                            <a href="<%=subCategory.id%>" id='<%=subCategory.id%>'><%=subCategory.name%></a>
+                        <%}%>
+                    <%}%>
+                </form>
+            </div>
+        </div>
+
+
+        <div class='menu-price'>
+
+            <div class="heading">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Price</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
+            </div>
+            <div>
+                <div class='slider-holder'>
+                    <div class='mobile-slider'>
+                        <span class='min-price'></span><span class='max-price'></span>  
+                    </div>
+                    <input id='price-slider' type="range">
+                </div>
+                <p id='value'>Value:0</p>
+            </div>
+            
+        </div>
+
+
+        <div class='color-menu'>
+            <div class="heading">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Color</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
+            </div>
+            <div class='color-holder'>
+                <% for(product of products){ %>
+                    <%for(imageGroup of product.image_groups){%>
+                        <%if(imageGroup.view_type=="swatch"){%>
+                            <%for(image of imageGroup.images){%>
+                                <div class='chose-variant-holder'>
+                                    <input class='color-variant-checkbox' id = "<%=imageGroup.variation_value%>" type='checkbox'>
+                                    <label for="<%=imageGroup.variation_value%>">
+                                        <img class="variants-image" src="/images/<%=image.link%>"
+                                        alt="<%=image.alt%>"
+                                        title="<%=image.title%>">
+                                    </label>
+                                </div> 
+                            <%}%>
+                        <%}%>
+                    <%}%>
+                <%}%>
+            </div>
+        </div>
+
+        <div class='size-variants-holder'>
+            <div class="heading">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Size</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
+            </div>
+            <div class='size-variants'>
+
+            </div>
+        </div>
+        <div class='reset-filters'>
+            <div class="heading">
+                <p></p>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
+            </div>
+            <button type='submit'>Reset Filters</button>
+        </div>
+        <button class='submit-filters' type="button">Submit</button>
+
+</div>
+        

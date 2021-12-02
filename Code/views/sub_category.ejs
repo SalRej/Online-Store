@@ -1,0 +1,16 @@
+<%- include('./header.ejs') %>
+
+<div class='container'>
+    <% for(x of subCategories){ %>
+        <div class='product'>
+            <div class='name'>
+                <a href="<%=categoryName%>/<%=x.id%>"><%=x.name%></a>
+            </div>
+            <a href="<%=categoryName%>/<%=x.id%>"><img src ="../images/<%=x.image%>"></a>
+            <p class='title'><%=x.page_title%></p>
+            <p><%=x.page_description%></p>
+        </div>
+    <%}%>
+</div>
+<%- include("./footer.ejs")%>
+
