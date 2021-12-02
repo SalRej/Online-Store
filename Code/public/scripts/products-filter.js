@@ -131,7 +131,7 @@ const applyFilters = ()=>{
             $(".num-products").text(countProducts+" ITEMS");
         })
 
-        const dropDownBar= $(".drop-down");
+        const dropDownBar= $(".drop-down-descktop,.drop-down-mobile");
         dropDownBar.each(function(){
             $(this).click(function(){
                 let parrent = $(this).parent().parent();

@@ -1,5 +1,11 @@
 @media all and (min-width:1000px){
+    .circle-for-mobile{
+        display: none;
+    }
     .show-filters{
+        display: none;
+    }
+    .drop-down-mobile{
         display: none;
     }
     .menu-container{
@@ -211,14 +217,28 @@
     .mini-header{
         display: none;
     }
-    
+    .refine{
+        display: none;
+    }
     .menu-container{
         width: 100%;
         display: none;
         border-bottom-style: solid;
         margin-bottom: 5%;
-        
+        .drop-down-descktop{
+            display: none;
+        }
+        .checked{
+            
+            &::first-letter{
+                color:red;
+                margin-left:-3%;
+            }
+            color:black;
+            font-weight: bold;
+        }
         .heading{
+            color:grey;
             padding-left:5%;
             padding-right:5%;
             padding-top:2%;
@@ -228,16 +248,34 @@
             justify-content: space-between;
             background-color: rgb(238, 238, 238);
             img{
-                width:10%;
-                height: 10%;
+                width:5%;
+                height:2%;
+                margin-top:5%;
+                margin-bottom:5%;
+            }
+            .circle-for-mobile{
+                display: inline-block;
+                border-radius: 50%;
+                background-color: grey;
+                height: 10px;
+                width: 10px;
+                margin-bottom:2%;
+            }
+            p{
+                display: inline-block;
             }
         }
         
         a{
             display: block;
-            margin-left:5%;
+            margin-left:15%;
+            //margin-right:15%;
             color:black;
             font-size: 1.1em;
+            border-bottom-style:solid;
+            border-bottom-color:rgb(221, 221, 221);
+            border-bottom-width:1px;
+            padding-bottom: 2%;
         }
         .slider-holder{
             width: 100%;
@@ -258,7 +296,7 @@
         .color-menu{
             .chose-variant-holder{
                 margin-top:2%;
-                
+                margin-bottom: 2%;
             }
             .color-holder{
                 display: flex;
@@ -271,7 +309,6 @@
                         display: block;
                         width: 50%;
                         height:100%;
-                        transition: border-radius 1s;
                     }
                 }
                 
@@ -279,7 +316,9 @@
                     display: none;
                 }
                 :checked + label img{
-                    border-radius: 50%;
+                    border-style: solid;
+                    border-color:red;
+                    border-bottom-width: 4px;
                 }
             }
         }
@@ -288,21 +327,21 @@
                 margin-top: 5%;
 
                 display: grid;
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(4,1fr);
                 label{
                     margin-bottom:2%;
                     text-align: center;
                     border-style: solid;
-                    transition: color 1s;
-                    transition: background-color 1s;
+                    border-color:lightgray;
+                    border-width: 1px;
                     
                 }
                 input{
                     display: none;
                 }
                 :checked +label{
-                    background-color: black;
-                    color:white;;
+                   border-color:red;
+                   border-bottom-width: 4px;
                 }
             }
         
@@ -324,15 +363,39 @@
         padding-left:5%;
         padding-right:5%;
         padding-top:2%;
-        font-size: 1.5em;
+        font-size: 1em;
         font-weight: bold;
+        color:grey;
         display: flex;
         justify-content: space-between;
         background-color: rgb(238, 238, 238);
-        img{
-            width:10%;
-            height: 10%;
+
+        .wraper{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 2em;
+                height: 2em;
+            }
+            .show-filters-button{
+                height: 1.2em;
+                width: 0.7em;
+                margin-top:7%;
+                margin-right:10%;
+            }
         }
-        background-color: rgb(207, 207, 207);
+    }
+    .reset-filters{
+        font-weight: bold;
+        text-align: center;
+        border-bottom-style:solid;
+        border-bottom-color:rgb(216, 216, 216);
+        border-bottom-width:1px;
+        
+        button{
+            padding-top: 5%;
+        padding-bottom: 5%;
+            color:grey;
+        }
     }
 }

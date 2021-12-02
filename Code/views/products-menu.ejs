@@ -1,14 +1,30 @@
+
+<div class="show-filters">
+    <div class='wraper'>
+        <img class='show-filters-button'src="/images/back-icon.png">   
+        <p>Filters</p>
+    </div>
+    <div class='wraper'>
+        <p>Search</p>
+        <img src="/images/search.png">
+    </div>
+</div>
 <div class='menu-container'>
     <script>
         const mainCategory = <%- JSON.stringify(mainCategory) %>;
         let products = <%- JSON.stringify(products) %>;
     </script>
 
-        <p>Refine by:</p>
+        <p class='refine'>Refine by:</p>
         <div class='category'>
             <div class="heading">
-                <p>Category</p>
-                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Category</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
             </div>
             <div>
                 <a href="/mens/Clothing/mens-clothing-suits" id='mens'>Men</a>
@@ -19,8 +35,13 @@
 
         <div class="product-type">
             <div class="heading">
-                <p>Product Type</p>
-                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Product Type</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
             </div>
             <div>
                 <form id="subCategoryForm">
@@ -37,8 +58,13 @@
         <div class='menu-price'>
 
             <div class="heading">
-                <p>Price</p>
-                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Price</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
             </div>
             <div>
                 <div class='slider-holder'>
@@ -55,8 +81,13 @@
 
         <div class='color-menu'>
             <div class="heading">
-                <p>Color</p>
-                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Color</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
             </div>
             <div class='color-holder'>
                 <% for(product of products){ %>
@@ -66,7 +97,7 @@
                                 <div class='chose-variant-holder'>
                                     <input class='color-variant-checkbox' id = "<%=imageGroup.variation_value%>" type='checkbox'>
                                     <label for="<%=imageGroup.variation_value%>">
-                                        <img class="variants-image" src="../../images/<%=image.link%>"
+                                        <img class="variants-image" src="/images/<%=image.link%>"
                                         alt="<%=image.alt%>"
                                         title="<%=image.title%>">
                                     </label>
@@ -80,8 +111,13 @@
 
         <div class='size-variants-holder'>
             <div class="heading">
-                <p>Size</p>
-                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
+                <div>
+                    <div class='circle-for-mobile'></div>
+                    <p>Size</p>
+                </div>
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
             </div>
             <div class='size-variants'>
 
@@ -90,7 +126,9 @@
         <div class='reset-filters'>
             <div class="heading">
                 <p></p>
-                <img class="drop-down" src="../../images/Rectangle 25@1X.png">
+                <img class="drop-down-descktop" src="/images/Rectangle 25@1X.png">
+                <img class="drop-down-mobile" src="/images/Vector Smart Object copy 12@1X.png">
+
             </div>
             <button type='submit'>Reset Filters</button>
         </div>
@@ -98,7 +136,3 @@
 
 </div>
         
-<div class="show-filters">   
-    <p>Filters</p>
-    <img class='show-filters-button'src="../../images/arrow-down-icon-png-6685.png">
-</div>
